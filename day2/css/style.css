@@ -1,0 +1,32 @@
+.heading  {
+    color: rgb(0, 255, 55);
+    background-color: rgb(209, 70, 70);
+    text-align: justify;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgb(56, 67, 216);
+    text-decoration: solid underline 3px rgb(61, 27, 186);
+    text-transform: lowercase;
+    line-height: 50px;
+    letter-spacing: 3px;
+    word-spacing: 3px;
+    white-space: pre;
+    text-shadow: 3px 3px 5px;
+}
+.heading:hover{
+    color: green;
+}
+.heading {
+    /* Chi ap dung the block, khong ap dung the inline */
+    height: 500px;
+    width: 500px;
+    background-image: url();
+    /*Nen luu anh ve */
+}
+.container {
+    width: 900px;
+    /* Dat container ra giua man hinh */
+    margin-left: auto;
+    margin-right: auto;
+}
