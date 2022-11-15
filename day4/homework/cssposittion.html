@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tim hieu ve position</title>
+</head>
+<body>
+    <h2>Hiểu về thuộc tính position trong CSS</h2>
+    <p>Khi bạn thiết kế các layout cho website việc chuyển từ file thiết kế theo định dạng HTML (Hypertext Markdown Language) bạn sẽ buộc phải sử dụng thuộc tính position trong CSS. Ví dụ như làm thanh tính năng trên menu, header, v.v. Có thể hiểu nó là thuộc tính xác định loại của phương pháp định vị trí cho thành phần.</p>
+    <p>Với thuộc tính position chúng ta có 5 giá trị chính cần biết:</p>
+
+    <p><strong>Static</strong>: Đây được xem là giá trị hiển thị Position trong css một cách mặc định (default), các thành phần sẽ nằm theo thứ tự của văn bản. </p>
+
+    <p><strong>Relative</strong>: Định vị trí tuyệt đối cho các thành phần, không gây ảnh hưởng tới vị trí ban đầu hay các thành phần khác.</p>
+
+    <p><strong>Absolute</strong>: Giá trị này sẽ giúp định vị trí tuyệt đối cho thành phần theo thành phần bao ngoài, hoặc ít nhất là theo cửa sổ trình duyệt. Fixed: Định vị trí tương đối cho thành phần theo cửa sổ trình duyệt.</p>
+
+    <p><strong>Fixed</strong>: Định vị và giúp cho phần tử luôn cố định một chỗ, ví dụ như khi bạn scroll trình duyệt chẳng hạn, phần tử sẽ không thay đổi.</p>
+
+    <p><strong>Inherit</strong>: Xác định thừa hưởng thuộc tính từ thành phần cha (thành phần bao ngoài).</p>
+
+
+    <p>Trước hết hãy nói về thuộc tính position relative, absolute và các thuộc tính cool ngầu khác</p>
+
+    <strong>Thuộc tính Position Relative</strong>
+    <p>Thuộc tính position: relative trong CSS giúp Định vị trí tuyệt đối cho các thành phần. Ví dụ:</p>
+    selector{position: relative;}
+    <p>Lưu ý, khi bạn bù một vị trí phần tử với position: relative, không gian nó chiếm không di chuyển, vị trí hiện tại của nó sẽ khiến đổi bố cục xung quanh vị trí đó không thay đổi…Tưởng tượng như thế này, position: relative giống như nhân vật có khả năng di chuyển tự do, nhưng luôn luôn liên quan đến nơi ban đầu.</p>
+
+    <strong>Thuộc tính Position Absolute</strong>
+    <p>Như đã nói ở trên thuộc tính position: absolute trong CSS có tác dụng giúp định vị trí tuyệt đối cho thành phần theo thành phần bao ngoài, hoặc ít nhất là theo cửa sổ trình duyệt. Cụ thể hơn, thuộc tính absolute xác định định tọa độ của thành phần theo một thẻ cha relative (nếu có), Nếu không có thẻ cha thì nó sẽ đi theo body của toàn trang web. Cách sử dụng cũng tương tự như relative.</p>
+
+    <strong>Thuộc tính Position Static</strong>
+    <p>Thuộc tính position: staticđược xem là giá trị mặc định (default) của position. Đây là các giá trị mà dù bạn có khai báo chúng hay không khai báo thì các phần tử (element) sẽ tự được sắp xếp vị trí một cách như bình thường trên trang web.</p>
+
+    <strong>Thuộc tính Position Fixed</strong>
+    <p>Thuộc tính thường được các lập trình viên dùng để định vị một thành phần so với window hiển thị của các trình duyệt. Bạn có thể thấy ví dụ này, khi vào một website nào đó và bạn thử scroll browser, bạn sẽ thấy menu hay button cứ đứng yên một chỗ không thay đổi thì đó chính là position fixed. Giá trị này hoàn toàn không phụ thuộc vào phần tử cha, khi nào scroll trình duyệt là nó hoạt động thôi.</p>
+
+    <strong>Thuộc tính Position Sticky</strong>
+    <p>Đây là một thuộc tính khá tương đồng với fixed, bạn có thể xem nó như một sự kết hợp “lưỡng long nhất thể” của relative và fixed. Vì có sự lai tạo này nên nó cũng không được hỗ trợ quá nhiều trong cộng đồng làm web. Nó cũng không sử dụng được trên trình duyệt Internet Explorer cũng như một số phiên bản đầu của Edge nên sẽ dễ gây lỗi. Không khuyến khích các lập trình viên sử dụng</p>
+</body>
+</html>
