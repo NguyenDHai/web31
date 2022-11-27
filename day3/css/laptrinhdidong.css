@@ -1,0 +1,63 @@
+* /* Ap dung cho tat ca cac the*/ {
+    /* Loai bo margin va padding mac dinh cuar trinh duyet*/
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    width: 340px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(207, 207, 207);
+    
+}
+
+.main {
+    
+    border: 5px rgb(240, 3, 3) solid;
+    border-radius: 5px;
+    
+}
+
+.content {
+    background-color: white;
+}
+
+.time {
+    text-align: center;
+    color: white;
+    border-radius: 20px 0px 0px 20px;
+}
+.time-year {
+    padding: 5px;
+    background-color: orangered;
+    font-size: 16px;
+}
+.time-datemonth {
+    background-color: rgb(254, 107, 54);
+    padding: 20px;
+}
+
+.time-day {
+    font-size: 40px;
+}
+.post-title {
+    
+    padding: 15px;
+}
+
+.time-day {
+    text-size-adjust: 20px;
+}
+
+.section-information {
+    padding: 10px;
+}
+
+.section-signup {
+    color: rgba(25, 129, 210, 0.939);
+    border-top: solid;
+    border-color: rgba(200, 198, 198, 0.503);
+    padding: 15px;
+}

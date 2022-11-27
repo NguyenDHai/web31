@@ -1,0 +1,60 @@
+.box {
+    width: 200px;
+    height: 200px;
+}
+
+.static {
+    background-color: cornflowerblue;
+}
+
+.relative {
+    background-color: green;
+
+    /* Mac dinh tat ca cac gia tri khac static se nam tren layer cua cac*/
+    /* Viec su dung relative thi khong anh huong den vi tri cua nhung phan tu xung quanh*/
+    /* Chi ap dung duoc 2/4 thuoc tinh va thuong theo 1 goc cu the */
+    /* Thuc te, relative khong phai de dich chuyen vi tri phan tu ma su dung de lam moc can chinh cho cac phan tuc con la absolute*/
+    /* Truong hop dich chuyen phan tu thi dung translate thay the*/
+    position: relative;
+    z-index: 0;
+   
+}
+
+.absolute {
+    /* Khi su dung absolute thi cac phan tu xung quanh se bi anh huong*/
+    /* Khi abolute khong nam trong bat ky cha nao co position khac static thi se can theo khung hinh (viewport) - Khung hinh*/
+    /* Can theo phan tu cha gan nhat co position khac static*/
+    /* Co the ap dung dong thoi ca 4 thuoc tinh top left right bottom - huu ich trong truong hop tao lop phu man hinh */
+    background-color: crimson;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+.box.absolute.overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.365);
+}
+
+.box.relative:hover .box.absolute.overlay {
+    /* Hien thi overlay khi di chuot vao phan tu cha */
+    display: black;
+}
+.box.fixed {
+    background-color: lawngreen;
+
+    /* Lam cac phan tu co dinh nhu menu*/
+    /* Cung anh huong toi cac phan tu xung quanh*/
+    /* Can chinh theo khung trinh duyet*/
+    /* Cung co the dong thoi ap dung 4 thuoc tinh - tao lop phu toan bo man hinh*/
+    position: fixed;
+
+    bottom: 0;
+    right: 0;
+}
+
+/*Sticky*/
+/* Can co 1 container co chieu cao cu the */
+/* Cho phep phan */

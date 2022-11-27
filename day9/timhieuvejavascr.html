@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tim hieu ve javascr</title>
+</head>
+<body>
+    <div>JavaScript là gì?</div>
+<p>JavaScript là một ngôn ngữ lập trình website, được tích hợp và nhúng trong HTML giúp website sống động hơn. JavaScript cho phép kiểm soát các hành vi của trang web tốt hơn so với khi chỉ sử dụng mỗi HTML.</p>
+<p>JavaScript là ngôn ngữ lập trình được hỗ trợ hầu như trên tất cả các trình duyệt như Firefox, Chrome, … thậm chí các trình duyệt trên thiết bị di động.</p>
+
+<div>JavaScript dùng làm gì?</div>
+<div>JavaScript có thể được ứng dụng trong rất nhiều lĩnh vực:</div>
+Lập trình website.
+Xây dựng ứng dụng cho website máy chủ.
+Ứng dụng di động, app, trò chơi.
+Khi tải một trang web, trình duyệt phân tích cú pháp HTML và tạo ra một loại dữ liệu gọi là DOM từ nội dung. DOM thể hiện chế độ xem trực tiếp của trang web với mã JavaScript. Đoạn mã này thực hiện cập nhật cho DOM và được trình bày ngay lập tức cho người dùng.
+Trình duyệt cũng ghi nhận các sự kiện giao diện người dùng như: di chuyển chuột, nhấp chuột, v.v. Sau đó, tùy theo phản hồi của người dùng, đoạn mã sẽ thực hiện công việc được lập trình tương ứng. Sử dụng tất cả các tiện ích này, bạn có thể xây dựng các ứng dụng nhỏ để phục vụ cho một vài mục đích được cho phép.
+
+<div>Nhúng JavaScript vào file HTML</div>
+Bạn có thể nhúng JavaScript vào một file HTML theo một trong hai cách chủ yếu sau đây:
+Dùng cặp thẻ <script></script> để nhúng JavaScript vào file HTML
+Dùng thẻ link để nhúng JavaScript vào file HTML (Viết file riêng có đuôi .js)
+
+
+<div>Sử dụng Chome DevTool (console)</div>
+Những lỗi liên quan tới javascript (không load được, thiếu mở đóng ngoặc, chấm phẩy, …) sẽ hiển trị trong tab này. Ta có thể nhập trực tiếp code js ở đây để chạy, đây là 1 tính năng rất hay để có thể test từng code js riêng lẻ.
+
+<div>Các kiểu dữ liệu, biểu diễn giá trị trong JavaScript</div>
+
+<p>
+  JavaScript có 8 kiểu dữ liệu cơ bản, trong đó, có 7 kiểu dữ liệu nguyên thủy (boolean, null, undefined, number, BigInt, string, symbol) và 1 kiểu dữ liệu dạng tham chiếu (object).
+  Kiểu dữ liệu nguyên thủy: là kiểu dữ liệu mà giá trị không thể thay đổi được. Đây là kiểu dữ liệu ứng với "level thấp nhất" của ngôn ngữ lập trình.
+  Kiểu dữ liệu tham chiếu (object): là tập hợp của các thuộc tính (key) và giá trị (value). Mà số lượng các key có thể thay đổi, giá trị ứng với key cũng có thể thay đổi. Do đó, giá trị của kiểu dữ liệu tham chiếu có thể thay đổi được.
+  
+</p>
+<div>Kiểu dữ liệu boolean (kiểu logic)</div>
+<p>
+  Boolean là kiểu dữ liệu logic chỉ bao gồm hai giá trị là true (đúng, chính xác) và false (sai, không chính xác), ví dụ:
+  let isWebLoaded = true; // => Trang web đã được tải xong
+  console.log(isWebLoaded); // true
+</p>
+ 
+<pre>
+  let isProgramRunning = false; // Chương trình đang không chạy
+  console.log(isProgramRunning); // false
+</pre>
+ 
+<div>Kiểu dữ liệu null</div>
+<p>Kiểu dữ liệu null là một kiểu dữ liệu đặc biệt, chỉ bao gồm một giá trị là null, ví dụ:</p>
+<pre>
+  let language = null;
+  console.log(language); // null
+  
+</pre>
+Trong ví dụ trên, biến language được hiểu là không biết giá trị hoặc không có giá trị.
+Kiểu dữ liệu undefined
+Cũng tương tự như null, undefined là một kiểu dữ liệu đặc biệt trong JavaScript, chỉ bao gồm một giá trị undefined, ví dụ:
+let language = undefined;
+console.log(language); // undefined
+ 
+Kiểu dữ liệu undefined có nghĩa là giá trị chưa được gán.
+📝 Khác nhau cơ bản giữa undefined và null:
+Kiểu dữ liệu null là kiểu dữ liệu được gán cho biến, thường được hiểu là không biết (không có).
+Trong khi đó, kiểu dữ liệu undefined là giá trị mặc định của biến sau khi khai báo mà không gán giá trị cho biến.
+Ví dụ khai báo biến mà không gán giá trị:
+let language;
+console.log(language); // undefined
+ 
+Trường hợp biến đã có giá trị rồi, bạn vẫn có thể chủ động gán lại giá trị undefined cho biến. Tuy nhiên, điều này là không nên. Vì như vậy là không đúng ý nghĩa của kiểu dữ liệu undefined.
+let language = "JavaScript";
+console.log(language); // JavaScript
+ 
+// KHÔNG NÊN
+language = undefined;
+console.log(language); // undefined
+ 
+// NÊN
+language = null;
+console.log(language); // null
+ 
+Kiểu dữ liệu number
+Kiểu dữ liệu number là kiểu dữ liệu dạng số (tương tự trong toán học). Number trong JavaScript không có cú pháp gì đặc biệt. Bạn chỉ cần viết số ra.
+JavaScript có hai loại số là: số nguyên và số thực.
+let n1 = 66; // số nguyên dương
+let n2 = -66; // số nguyên âm
+let n3 = 3.14; // số thực dương
+let n4 = -3.14; // số thực âm
+let n5 = 2e3; // => 2*10^3 = 2000
+let n6 = 2e-3; // => 2*10^(-3) = 0.002
+let n7 = 0xff; // số dạng hexa (hệ cơ số 16): 15*16 + 15 = 255
+let n8 = 067; // số dạng octa (hệ cơ số 8): 6*8 + 7 = 55
+let n9 = 0b11; // số dạng nhị phân (hệ cơ số 2): 1*2 + 1 = 3
+ 
+Ngoài những loại số trên, JavaScript còn có 3 số đặc biệt là: Infinity, -Infinity và NaN.
+Infinity: là số dương vô cùng. Đây là giá trị đặc biệt và nó lớn hơn bất kỳ số nào khác. Bạn có thể sử dụng giá trị này trực tiếp hoặc thu được nó bằng cách lấy lấy số dương bất kỳ chia cho 0 (toán tử chia trong JavaScript là /).
+console.log(Infinity); // Infinity console.log(1 / 0); // Infinity
+ 
+-Infinity: là số âm vô cùng. Đây cũng là giá trị đặc biệt và nó nhỏ hơn bất kỳ số nào khác. Bạn có thể sử dụng giá trị này trực tiếp hoặc thu được nó bằng cách lấy lấy số âm bất kỳ chia cho 0.
+console.log(-Infinity); // -Infinity console.log(-1 / 0); // -Infinity
+ 
+NaN: là viết tắt của Not a Number, được sử dụng để đại diện cho những trường hợp tính toán sai hoặc kết quả của một phép tính không xác định.
+// Lấy 0 / 0 console.log(0 / 0); // NaN
+// Lấy chuỗi ký tự chia cho số console.log("JavaScript" / 2); // NaN
+// Lấy hai số Infinity trừ cho nhau console.log(Infinity - Infinity); // NaN
+ 
+Nhờ những số đặc biệt này mà việc tính toán trong JavaScript "luôn an toàn". Vì chương trình sẽ không bao giờ bị crash do lỗi chia cho 0 hay giá trị không phải số. Điều mà bạn có thể gặp phải ở nhiều ngôn ngữ khác như C/C++, Java,...
+Kiểu dữ liệu BigInt
+Trong JavaScript, kiểu dữ liệu number không thể biểu diễn một số nguyên lớn hơn (253-1) (bằng 9007199254740991) và nhỏ hơn -(253-1).
+Với hầu hết các trường hợp, việc sử dụng kiểu dữ liệu number là quá đủ. Nhưng đôi khi, bạn vẫn cần biểu diễn và tính toán với những số nguyên cực kỳ lớn. Do đó, kiểu dữ liệu BigInt ra đời nhằm giải quyết vấn đề này.
+Để biểu diễn số nguyên với kiểu BigInt, bạn chỉ cần thêm chữ cái n ở phía sau, ví dụ:
+const reallyBigNumber = 12345678987654321012345678987654321n;
+console.log(reallyBigNumber); // 12345678987654321012345678987654321n
+ 
+Kiểu dữ liệu string
+String là kiểu dữ liệu dùng để biểu diễn chữ, văn bản, đoạn văn bản,...
+Có ba cách để biểu diễn string trong JavaScript:
+Dùng dấu nháy đơn (')
+Dùng dấu nháy kép (")
+Dùng dấu "backtick" (`)
+const msg1 = "Đây là string dùng dấu nháy đơn";
+const msg2 = "Đây là string dùng dấu nháy kép";
+const msg3 = `Đây là string dùng dấu backtick`;
+ 
+Dấu nháy đơn và dấu nháy kép là hoàn toàn giống nhau.
+Riêng với dấu "backtick", bạn có thể sử dụng biến, hằng hoặc thậm chí viết một biểu thức trong đó, với cú pháp ${…}, ví dụ:
+// Truyền biến vào trong dấu "backtick"
+let name = "Lam";
+console.log(`My name is ${name}`); // My name is Lam
+ 
+// Truyền hằng vào trong dấu "backtick"
+const language = "JavaScript";
+console.log(`You are learning ${language}`); // You are learning JavaScript
+ 
+// Truyền vào biểu thức
+console.log(`1 + 2 = ${1 + 2}`); // 1 + 2 = 3
+ 
+String trong JavaScript có thể chỉ gồm 1 kí tự "a", nhiều kí tự "abc" hoặc không kí tự nào "" (empty string).
+Kiểu dữ liệu symbol
+Symbol là một kiểu dữ liệu nguyên thủy dùng để tạo ra các giá trị duy nhất (unique value) và bất biến (immutable). Symbol thường được dùng làm key cho kiểu dữ liệu object sau đây. (Chúng ta sẽ tìm hiểu sâu hơn về Symbol trong các bài viết sau)
+Kiểu dữ liệu object
+Object là kiểu dữ liệu tham chiếu. Có thể hiểu object là một tập hợp gồm các cặp key - value (khóa - giá trị).
+Trong đó, kiểu dữ liệu của key có thể là string hoặc symbol. Và value ứng với key có thể là bất kỳ kiểu dữ liệu nào. (Chúng ta sẽ tìm hiểu sâu hơn về Object ở các bài sau)
+Cách xác định kiểu dữ liệu của biến
+Như mình đã nói ở trên, một biến trong JavaScript có thể thuộc bất kỳ kiểu dữ liệu nào. Để xác định kiểu dữ liệu hiện tại của một biến, JavaScript cung cấp cho bạn typeof, với hai loại cú pháp:
+Dạng toán tử typeof x.
+Dạng hàm typeof(x).
+Kết quả trả về sẽ là một string ứng với tên của kiểu dữ liệu. Ví dụ về toán tử typeof với các kiểu dữ liệu trong JS:
+let x;
+console.log(typeof x); // undefined
+ 
+x = true;
+console.log(typeof x); // boolean
+ 
+x = 1;
+console.log(typeof x); // number
+ 
+x = 1234567891234567890123456789125345362n;
+console.log(typeof x); // bigint
+ 
+x = "hello";
+console.log(typeof x); // string
+ 
+// (1)
+x = Symbol("id");
+console.log(typeof x); // symbol
+// (2)
+x = { n: 1 };
+console.log(typeof x); // object
+// (3)
+x = null;
+console.log(typeof x); // object
+ 
+String Conversion
+1. String()
+Khi chúng ta cần chuyển đổi kiểu của một value sang string chúng ta có thể sử dụng String():
+var x = 15;
+var y = String(x);
+alert(typeof(y)); // string
+
+//Hoặc khi ta có 1 mảng
+
+var a = [1, 2, 3];
+var b = String(a);
+alert(b); // 1,2,3
+alert(typeof(b)); // string
+
+//Tuy nhiên khi ta áp dụng với Object
+var obj = {1: 'a', 2: 'b'};
+var objToString = String(obj);
+alert(objToString); // [object Object]
+ 
+2. toString()
+Ngoài việc sử dụng String() thì chúng ta có vẻ quen thuộc hơn với toString(), nó cũng sẽ ép kiểu các giá trị về string:
+var x = 15;
+var y = x.toString();
+alert(typeof(y)); // string
+
+//Hoặc khi ta có 1 mảng
+
+var a = [1, 2, 3];
+var b = a.toString();
+alert(b); // 1,2,3
+alert(typeof(b)); // string
+
+//Và áp dụng với Object cũng chưa ra được kq mong muốn
+var obj = {1: 'a', 2: 'b'};
+var objToString = obj.toString();
+alert(objToString); // [object Object]
+ 
+3. Sử dụng toán tử cộng "+"
+Khi sử dụng toán tử, chúng ta đặc biệt phải lưu ý đến toán tử + khi toán hạng có kiểu string. Khi chúng ta sử dụng toán tử + mà một trong các toán hạng có kiểu là string thì Javascript sẽ cố gắng ép kiểu của toán hạng còn lại về kiểu string. Hãy cùng xem ví dụ dưới đây:
+// Trong trường hợp có 2 toán hạng, 1 trong 2 toán hạng có kiểu là "string" 
+// thì JS sẽ ép kiểu của toán hạng còn lại về "string"
+alert("1" + 1); // "11"
+alert(1 + "1"); // "11"
+
+// Trong trường hợp có nhiều hơn 2 toán hạng và 1 trong các toán hạng có kiểu là "string"
+// thì tùy vào vị trí của toán hạng kiểu "string" mà ta có các kq khác nhau.
+
+alert(1 + 2 + "string" + 3 + 4); // "3string34"
+alert(1 + "string" + 2 + 3 + 4); // "1string234"
+alert(1 + 2 + 3 + 4 + "string"); // "10string"
+
+// Chúng ta sẽ chuyển đổi kiểu như thế nào?
+var x = 15;
+var y = "" + 15;
+alert(y); // "15"
+ 
+Numeric Conversion
+1. Number()
+Khi chúng ta muốn chuyển đổi từ một giá trị khác sang giá trị kiểu number, chúng ta có thể sử dụng Number():
+var x = "123";
+var y = Number(x);
+alert(y); // 123
+
+// Hoặc với các giá trị true/false
+var a = Number(true);
+alert(a); // 1
+// còn Number(false), Number(''), Number([]) hoặc Number(null) sẽ trả về 0
+
+// Khi chúng ta truyền vào Number() một string không phải chứa toàn là số
+// thì sẽ trả về NaN: Not a Number
+
+var string = "string";
+var toNumber = Number(string);
+alert(toNumber); // NaN
+// Ngoài ra khi truyền vào Object, undefined
+//hoặc array có length > 2 hoặc có 1 giá trị nhưng không phải number hoặc string là số thì cũng trả về NaN
+ 
+2. parseInt()/parseFloat()
+parseInt() sẽ chuyển đổi kiểu của một string về kiểu number nhưng ở dạng interger (số nguyên)
+parseInt() sẽ trả về các số nằm đầu tiên trong giá trị string đó, nếu chuỗi đó không thể chuyển thành number thì nó sẽ trả về NaN. Cùng xét ví dụ sau:
+var a = parseInt(true); // NaN
+var b = parseInt("10.00"); // 10
+var c = parseInt("10.33"); // 10
+var d = parseInt("34 45 66"); // 34
+var e = parseInt("   60   "); // 60
+var f = parseInt("40 years"); // 40
+var g = parseInt("He was 40"); // NaN
+ 
+parseFloat() sẽ chuyển đổi kiểu của một string về kiểu number nhưng ở dạng float (số thực)
+parseFloat() cũng gần giống như parseInt(). Cùng xét ví dụ sau:
+var a = parseInt(true); // NaN
+var a = parseFloat("10"); // 10
+var b = parseFloat("10.00"); // 10
+var c = parseFloat("10.33"); // 10.33
+var d = parseFloat("34 45 66"); // 34
+var e = parseFloat("   60   "); // 60
+var f = parseFloat("40 years"); // 40
+var g = parseFloat("He was 40"); // NaN
+ 
+3. Sử dụng toán tử "+"
+Tại sao vừa rồi ở trên chúng ta nói đến việc sử dụng + để chuyển kiểu về string mà dưới đây chúng ta lại dùng nó để chuyển kiểu về number. Chúng ta cùng xem ví dụ dưới đây:
+var x = "15";
+var y = +x;
+alert(y); // 15
+alert(typeof(y)); // number
+ 
+Khi chúng ta thêm + và trước giá trị thì nó sẽ chuyển đổi về kiểu number không giống như khi chúng ta sử dụng + trong một phép toán.
+Và nó cũng trả về các kết quả giống như sử dụng Number() trong các trường hợp cụ thể:
+var a = +false; // 0 === +"", +[], +null
+var b = +true; // 1
+var c = +"123"; // 123
+var d = +"abc"; // NaN
+var e = +[1]; // 1 === +["1"]
+var f = +["a"]; // NaN
+var g = +{}; // NaN
+ 
+Ngoài ra, khi chúng ta tính toán sử dụng các toán tử -, *, /, %, ** thì Javascript cũng sẽ cố gắng chuyển đổi kiểu các toàn hạng về number.
+Boolean Conversion
+Thường khi viết code Javascript chúng ta ít khi ép kiểu các giá trị về kiểu Boolean mà thường để tự Javascript ngầm ép kiểu, ví dụ như sau:
+var x = "string";
+if(x) {
+    alert(true);
+} else {
+    alert(false);
+}
+//KQ: true
+ 
+Ở đoạn code trên, chúng ta có thể thấy Javascript đã tự động ngầm ép kiểu của x trong if về Boolean để chạy câu lệnh if.
+Tuy nhiên, nhiều trường hợp chúng ta muốn lấy giá trị kiểu Boolean của nó để có thể strict equal hoặc cần hàm trả về true hoặc false thì chúng ta sẽ sử dụng Boolean():
+var x = Boolean(1);
+alert(x); // true
+ 
+Các giá trị khi ép kiểu sang Boolean trả về false: 0, '', false, null, undefined, NaN. Các giá trị này cũng được gọi là các falsy value trong Javascript.
+Ngoài các giá trị ở trên thì các giá trị còn lại đều trả về true.
+Object Conversion
+Như chúng ta đã tìm hiểu ở trên thì khi chuyển đổi kiểu từ object sang các kiểu khác như:
+string: [object Object]
+number: NaN
+boolean: true
+Vậy chúng ta phải làm thế nào để chuyển đổi kiểu từ object sang các kiểu dữ liệu nguyên thủy theo cách mà chúng ta mong muốn nhất.
+Khi chúng ta ép kiểu một object về string hoặc number thì Javascript sẽ cố gắng tìm và gọi 3 object methods như sau:
+Gọi obj[Symbol.toPrimitive](hint) - với key tượng trưng là Symbol.toPrimitive, nếu method này tồn tại.
+Dựa vào hint , nếu là string thì nó sẽ cố gọi đến method obj.toString() trước và obj.valueOf() sau nếu obj.toString() không tồn tại.
+Nếu hint là number thì nó sẽ cố gọi đến obj.valueOf() trước và obj.toString() sau.
+Symbol.toPrimitive
+Hãy cùng xét ví dụ:
+var obj = {
+  name: 'John Doe',
+  age: 53,
+  
+  [Symbol.toPrimitive](hint) {
+    return hint == "string" ? `${this.name}` : this.age;
+  }
+}
+
+alert(String(obj)); // "John Doe"
+alert(Number(obj)); // 53
+ 
+Symbol.toPrimitive sẽ cho phép chúng ta quy định giá trị trả về thông qua hint.
+toString/valueOf
+Methods toString và valueOf là 2 method cũ, nếu không tìm thấy Symbol.toPrimitive thì Javascript sẽ cố gắng gọi đến chúng theo thứ tự:
+toString rồi đến valueOf nếu hint là string
+valueOf rồi đên toString nếu hint khác string
+Theo mặc định, đối với một object đơn giản:
+toString method trả về một string: "[object Object]".
+valueOf method trả về chính object đó.
+var user = {name: "John"};
+
+alert(user); // [object Object]
+alert(user.valueOf() === user); // true
+ 
+Vậy chúng ta muốn giá trị trả về là giá trị mà chúng ta mong muốn giống như sử dụng Symbol.toPrimitive thì chúng ta sẽ cần sử dụng kết hợp toString và valueOf như sau:
+var obj = {
+  name: 'John Doe',
+  age: 53,
+  
+  toString() {
+    return this.name;
+  },
+
+  valueOf() {
+    return this.age;
+  }
+}
+ 
+Các toán tử gán trong Javascript
+Toán tử gán được dùng để gán giá trị ở bên phải toán tử vào biến ở bên trái toán tử. Có các toán tử gán sau:
+Toán tử
+Ví dụ
+Ý nghĩa
+=
+x = y
+gán giá trị y vào x
++=
+x += y
+x = x + y; cộng thêm vào x giá trị y
+-=
+x -= y
+x = x - y
+*=
+x *= y
+x = x * y
+/=
+x /= y
+x = x / y
+%=
+x %= y
+x = x % y
+??=
+x ??= y
+Toán tử ??= trong js là phép gán khi null.
+Nếu x bằng null thì giá trị y gán cho x, nếu x đã khác null thì không thay đổi gì
+let your_name = "XUANTHULAB";
+let your_addr = null;
+const name_default = "KHÔNG TÊN";
+const add_default = "KHÔNG ĐỊA CHỈ";
+
+your_name ??= name_default;
+console.log(your_name); // "XUANTHULAB"
+
+your_addr ??= add_default;
+console.log(your_addr); // "KHÔNG ĐỊA CHỈ"
+ 
+
+Toán tử ?? loại bỏ null (null coalescing) trong javascript
+Toán tử ?? trả về biểu thức bên trái nếu nó khác null (undefined), trả về biểu thức bên phải nếu nó là null
+var ketqua = biểu_thức_trái ?? biểu_thức_phải;
+Biểu thức này nhằm đảm bảo một biến, biểu thức nhận giá trị khác null.
+let your_name = null;
+let name_default = "KHÔNG TÊN";
+ 
+let name = your_name ?? name_default;
+console.log(name); // "KHÔNG TÊN"
+ 
+your_name = "XUANTHULAB";
+name = your_name ?? name_default;
+console.log(name); // "XUANTHULAB"
+ 
+Các toán tử số học JS
+Các toán tử số học này thực hiện trên các số - dữ liệu dạng số (giá trị cụ thể hoặc giá trị nằm trong tên biến).
+Toán tử
+Mô tả
+Ví dụ
++
+phép cộng
+25 + 5 = 30
+-
+phép trừ
+10 - 5 = 5
+*
+phép nhân
+2*3 = 6
+/
+phép chia
+20 / 2 = 10
+%
+lấy phần dư của phép chia
+56 / 3 = 2
+++
+Tăng thêm 1
+var a = 10; a ++; //giá trị a là 11
+--
+giảm đi 1
+var a = 10; a --; //giá trị a là 9
+
+var x = 10 + 5;
+document.write(x);
+// In ra:  15
+ 
+Có thể sử dụng nhiều số hạng:
+var x = 10;
+var y = x + 5 + 22 + 45 + 6548;
+document.write(y);
+ 
+//In ra : 6630
+ 
+Ví dụ về phép chia lấy phần dư modulus
+var myVariable = 26 % 6;
+//myVariable bằng  2
+ 
+Chú ý về phép toán tăng thêm 1 ++ và giảm 1 --: Khi viết biểu thức thì toán tử có thể ở bên trước hoặc sau biến cần tăng giảm, kết quả trả về của biểu thức có sự khác nhau tùy cách viết
+Viết sau biến như: a = var++, b = var-- thì giá trị trả về của biểu thức (giá trị gán vào a, b) là giá trị gốc của var, còn bản thân var vẫn được tăng, giảm
+var a = 0; b = 10;
+var a = b++;
+//a sẽ là 10; b là 11
+ 
+Nếu toán tử ++-- viết bên trái biến, thì giá trị biểu thức trả về chính là biến sau khi tăng giảm
+var a = 0; b = 10;
+var a = ++b;
+//a sẽ là 11; b là 11
+ 
+Toán tử so sánh trong JavaScript (JS)
+Toán tử so sánh sử dụng trong các biểu thức về logic để so sánh bằng nhau, khác nhau. Nó trả về giá trị true false
+JavaScript có một số toán tử so sánh, ví dụ so sánh bằng: ==
+var num = 10;
+// num == 8 will return false
+ 
+Bảng toán tử so sánh
+Toán tử
+Diễn tả
+Ví dụ
+==
+so sánh bằng (và giá trị, không so sánh về kiểu dữ liệu)
+var v1 = (5 == 10); // false
+var v2 = 5;         // số
+var v3 = "5 ";      // chuỗi
+var v4 = (v2 == v3);// true
+ 
+===
+=== trong js so sánh giống nhau (true nếu cùng giá trị và kiểu dữ liệu)
+var v1 = (5 === 10);  // false
+var v2 = 5;           // kiểu số number
+var v3 = "5 ";        // chuỗi string
+var v4 = (v2 === v3); // false, giống giá trị nhưng khác kiểu
+ 
+!=
+so sánh khác giá trị (dấu khác trong javascript chỉ so sánh và giá trị không xét đến kiểu)
+var v1 = (5 != 10);  // true
+var v2 = (5 != "5"); // false
+ 
+!==
+Khác giá trị và khác kiểu
+var v1 = (5 !== 10);  // false - khác giá trị nhưng cùng kiểu
+var v2 = (5 !== "10"); // true
+ 
+>
+lớn hơn
+10 > 5 true
+>=
+lớn hơn hoặc bằng
+10 >= 5 true
+<
+nhỏ hơn
+10 < 5 false
+<=
+nhỏ hơn
+10 <= 5 false
+
+Khi sử dụng các toán tử này, hãy chắc chắn các số hạng có cùng kiểu; số so sánh với số; chuỗi so sánh với chuỗi ...
+Toán tử logic trong Javascript (JS)
+Bảng toán tử logic gồm các phép toán : và - hoặc - phủ định
+Toán tử
+Diễn tả
+&&
+phép và (toán tử && trong javascript) trả về true nếu 2 số hạng là true: a && b
+||
+phép hoặc (toán tử hoặc trong javascript) trả về true nếu 1 trong 2 số hạng là true : a || b
+!
+phủ định; !a trả về giá trị ngược với biểu thức a
+
+var a = (4 > 2) && (10 > 15);
+//a nhận giá trị false: vì 4 > 2 là true, 10 > 15 là false;
+//a = true && false;
+ 
+Toán tử ba ngôi js - Toán tử điều kiện
+variable = (condition) ? value1: value2;
+ 
+Nhận giá trị value1 nếu điều kiện là true, nhận value2 nếu điều kiện false. Đây là cách viết ngắn ngọn của lệnh if, câu lệnh trên tương đương với
+if (condition)
+    variable = value1;
+else
+    variable = value2;
+ 
+var isAdult = (age < 18) ? "Too young": "Old enough";
+//isAdult = "Too young" nếu age nhỏ hơn 18
+//isAdult = "Old enough" nếu age lớn hơn hoặc bằng 18
+ 
+Toán tử với chuỗi trong JS
+Toán tử với chuỗi sử dụng nhiều là nối hai chuỗi lại với nhau, sử dụng toán tử + để nối. Lưu ý toán tử này có thể nối số vào chuỗi.
+var mystring1 = "Học viết mã ";
+var mystring2 = "JavaScript.";
+document.write(mystring1 + mystring2);
+ 
+//sẽ viết ra: Học viết mã JavaScript.
+ 
+Xuất biến ra chuỗi với kỹ thuật Template Literal
+Một giá trị chuỗi bạn có thể viết để khởi tạo trong cặp dấu '',"", `` ví dụ như 'giá trị chuỗi' hoặc `giá trị chuỗi` hoặc "giá trị chuỗi"
+Tuy nhiên nếu bạn dùng `` thì trong chuỗi đó có thể chèn biểu thức với ký hiệu ${biểu-thức}. Giá trị của biểu thức sẽ được tính toán và chèn vào vị trí của biểu thức từ đó hình thành nên chuỗi cuối cùng
+let tb = `Hai nhân hai là ${2*2}`;
+let name = "XuanThuLab";
+let msg  = `Xin chao ${name}`;
+ 
+console.log(tb);        // Hai nhân hai là 4
+console.log(msg);       // Xin chao XuanThuLab
+ 
+Toán tử typeof
+Toán tử typeof trả về kiểu dữ liệu cần kiểm tra của một biến, một giá trị.
+var a = 1;
+var b = "Hi";
+var c = true;
+var d = null;
+var e;
+ 
+console.log(typeof(a)); // trả về number
+console.log(typeof(b)); // trả về string
+console.log(typeof(c)); // trả về boolean
+console.log(typeof(d)); // trả về object
+console.log(typeof(e)); // trả về undefined
+console.log(typeof(f)); // trả về undefined
+ 
+
+Biến là gì ?
+Giống như nhiều ngôn ngữ lập trình khác, JavaScript có các biến. Các biến có thể được coi là các thùng chứa có tên. Bạn có thể đặt dữ liệu vào các vùng chứa này và sau đó tham khảo dữ liệu chỉ bằng cách đặt tên vùng chứa.
+Biến JavaScrip được lưu ở đâu.
+Các biến JavaScript được lưu trữ trong bộ nhớ của browser process ( tiến trình trình duyệt) hiểu nôm na 1 cách đơn giản là biến được lưu trong phần Ram mà trình duyệt đang sử dụng.
+Khai báo biến
+Để khai báo một biến ta sử dụng từ khóa const, let, var.
+const được sử dụng để khai báo 1 hằng số, và giá trị của nó không thay đổi trong suốt chương trình.
+let khai báo biến chỉ có thể truy cập được trong block bao quanh nó được xác định bằng cặp {}.
+var khai báo biến có thể truy cập ở phạm vi hàm số hoặc bên ngoài hàm số, toàn cục.
+ 
+Giống như ngôn ngữ khác, cách đặt tên biến của JS cũng phải tuân theo 1 số quy tắc sau :
+Tên biến phải là các chữ không dấu viết hoa hoặc viết thường, các chữ số từ 0-9 và dấu gạch dưới () và kí hiệu $.
+Tên biến bắt đầu phải là chữ hoặc dấu gạch dưới (_), nếu bắt đầu bằng số là sai.
+Không thể sử dụng các từ dành riêng (như từ khóa JavaScript) làm tên.
+Các tên có phân biệt chữ hoa chữ thường
+một số ví dụ về khai báo biến
+
+*// Đúng*
+
+var person;
+ 
+*// Đúng*
+
+var _person;
+ 
+*// Đúng*
+
+var __person;
+ 
+*// Đúng*
+
+var person1;
+ 
+*// SAI*
+
+var 10persion;
+ 
+Kiểu dữ liệu của biến
+Khi khai báo biến ta không cần phải khai báo kiểu của biến đó trước khi dùng. Kiểu sẽ được tự động xác định trong lúc chương trình được thực thi. Điều đó cũng có nghĩa là một biến có thể chứa giá trị của các kiểu dữ liệu khác nhau.
+var test = 123 ; // test là một số
+
+var test = "variable of js "; //test là một chuỗi
+
+var test = true;  // test là một boolean
+ 
+Theo tiêu chuẩn ECMAScript xác định bảy kiểu dữ liệu như sau :
+Kiểu boolean
+Kiểu null
+Kiểu undefined
+Kiểu số
+Kiểu chuỗi
+Kiểu Symbol (mới trong ECMAScript 6)
+Kiểu đối tượng
+Phạm vi của biến
+Có hai loại phạm vi trong JavaScript. biến cục bộ (local scope) và biến toàn cục (global scope). Biến toàn cục được khai báo ngoài hàm , trong khi đó biến cục bộ được lưu khai báo bên trong một hàm.(Nên với cùng một tên biến, ta có thể khai báo ở những hàm khác nhau).
+ 
+Một biến toàn cục có thể được truy cập từ bên ngoài của hàm cũng như bên trong của hàm nhưng, một biến cục bộ chỉ có thể được truy cập bên trong hàm. Nếu truy cập từ bên ngoài của hàm, bạn sẽ nhận được lỗi 'undefined variable' (biến không xác định).
+ví dụ đơn giản :
+var foo = 50;  //<= biến toàn cục 
+
+function test() {
+        var bar = 100; //<= biến cục bộ 
+}
+ 
+Ví dụ nâng cao :
+function sum(a, b) { 
+     var sum = (a + b) ; // sum là biến cục bố
+     return sum;
+ }
+  
+ var result  = sum(10, 20); //result là biến toàn cục
+  
+  //và chúng ta có thể sử dụng biến result ở khắp nơi
+ function showResult(result) {
+     alert('sum is: ' + result);
+ }
+  
+ showResult();
+ 
+Trước hết, hàm sum được gọi là truyền hai biến trả về giá trị tổng của biến được truyền. Sau đó, giá trị trả về được lưu trữ trong biến result là biến toàn cục . Sau đó, hàm showResult () được gọi để hiển thị giá trị được lưu trữ trong biến toàn cục.
+Một số vấn đề hay gặp phải khi làm việc với biến.
+1. Sử dụng toán tử gán (=), thay vì toán tử so sánh (==) trong câu lệnh if.
+var x = 0;
+if (x = 10)
+câu lệnh này sẽ trả về giá trị true vì 10 là true
+ 
+var x = 0;
+if (x = 0) 
+câu lệnh này sẽ trả về giá trị false vì 0 là false
+ 
+để so sánh chính xác chúng ta phải sử dụng như sau
+var x = 0;
+if (x == 10)
+ 
+2. Nhầm lẫn giữa việc bổ sung và thêm số
+Cả 2 phép  tính toán trên đều sử dụng toán tử cộng giống nhau.
+
+var x = 10;
+var y = 5;
+var z = x + y;           // kết quả của z là  15.
+
+var x = 10;
+var y = "5";
+var z = x + y;           // kết quả của z là "105".
+ 
+3. Phá vỡ chuỗi JavaScript
+javascript cho phép chúng ta chia chuỗi thành 2 dòng nhưng nếu khai báo như :
+var x = "Hello
+World!";
+biến sẽ không hoạt động.
+ 
+để biến họat động chúng ta cần khai báo như sau :
+var x = "Hello \
+World!";
+
+
+</body>
+</html>

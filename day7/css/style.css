@@ -1,0 +1,59 @@
+
+:root {
+    --primary-color :blue;
+    --secondary-color: green;
+
+    --primaty-font: "Cascadia Code", mono;
+    --secondary-font: "Time New Roman", san-seri;
+
+    --column-gutter: 30px;
+    --row-gutter: 30px;
+}
+
+.box {
+    height: 500px;
+
+    background-image: linear-gradient(to right, red, green);
+}
+
+/* Transition thuong dung de kep hop voi cac bo chon :hover, :focus
+Transition thuong nen dat tren cac bo chon thong thuong
+
+Vi du:
+
+.box => tansition
+.box => thay doi gia tri
+
+-Duration thuong nen de 0.2 - 0.5s
+- Khong phai tat ca thuoc tinh deu ap dung duoc transition
+- Transition su dung voi cac hieu ung can thao tac tu phia nguoi dung
+*/
+
+.box:hover {
+    background:rgb(232, 176, 55);
+}
+
+@keyframes scale {
+    /* step */
+    from
+    {
+        width: 0;
+        height: 0;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        width: 300px;
+        height: 300px;
+        transform: rotate(180deg);
+    }
+
+    to {
+        width: 0;
+        height: 0;
+        transform: rotate(360deg);
+    }
+}
+img {
+    animation: scale 2s linear 0s infinite;
+}
