@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tim hieu ve cau lenh dieu khien</title>
+</head>
+<body>
+    <strong>
+        <div>Lệnh if trong javascript</div>
+    </strong>
+<p>Lệnh if trong javascript dùng để thực thi đoạn code khi điềukiện là đúng (điều kiện sai thì bỏ qua đoạn code, không thực hiện).</p>
+
+<div>
+    if (điềukiện) {
+       mã lệnh chạy khi điềukiện đúng
+    }
+</div>
+<div>Ví dụ sử dụng lệnh if trong javascript:</div>
+
+<div>
+    
+        var dtb = prompt("Nhập điểm trung bình");
+        if (dtb>10){
+            alert("Điểm trung bình làm gì mà lớn dữ vậy bồ?");
+        }
+</div>
+
+<div>Lệnh if else trong javascript</div>
+<p>Lệnh if else trong javascript là cách để thực thi một đoạn code khi điềukiện đúng và thực thi một đoạn code khác khi điềukiện là sai.</p>
+
+<p>
+    if (điềukiện){
+      mã lệnh chạy khi điều kiện đúng
+    } else {
+      mã lệnh chạy khi điều kiện sai
+    }
+    Ví dụ sử dụng lệnh if else trong javascript:
+</p>
+
+
+    <div>
+        var p = prompt("Nhập phái (nam/nu) ");
+        if (p=='nu'){
+            phucap=200000;
+        }
+        else {
+            phucap=100000;
+        }
+        alert("Phụ cấp là " + phucap);
+    </div>
+
+<div>Toán tử bậc 3 trong javascript</div>
+<p>Cách dùng toán tử bậc 3 là cách dùng gọn tương tự như lệnh if. Cú pháp như sau (operand1)? operand2:operand3 trong đó oerand1 là nơi diễn tả điều kiện thì operand2 được xử lý, ngược lại thì operand3 sẽ được xử lý.</p>
+
+
+   <div>var nn = (lang=='vi')? 'Tiếng Việt':'English'; </div>
+
+<strong>
+    <div>Lệnh switch</div>
+</strong>
+<p>Lệnh switch trong javascript giúp bạn diễn tả nhiều giá trị của điềukiện để thực thi các mã lệnh khác nhau. Cú pháp như sau:</p>
+
+<p>
+    switch ( biểuthức) {
+      case giatri1:
+         mã lệnh chạy khi biểuthức = giatri1
+         break;
+      case giatri2:
+         mã lệnh chạy khi biểuthức = giatri2
+         break;
+      default:
+        mã lệnh chạy mặc định
+    }
+    Trong khối lệnh swirch, sử dụng lệnh break để thoát khỏi lệnh switch, nếu không thì trình duyệt sẽ thực hiện tiếp tục các lệnh trong phần case tiếp theo.
+    
+    Ví dụ sử dụng lệnh switch trong javascript::
+</p>
+
+
+<div>
+    var diem = prompt("Hãy nhập điểm:")
+    switch ( diem ) {
+    case "A":
+        alert("Tuyệt vời!");
+        break;
+    case "B":
+    case "C":
+        alert("Khá!");
+        break;
+    case "D":
+    case "E":
+    case "F":
+        alert("Bạn cần cố gắng hơn!");
+        break;
+    default:
+        alert("Giá trị bạn nhập vào không hợp lệ.");
+    }//switch
+</div>
+
+<strong>
+    <div>Lệnh lặp while</div>
+</strong>
+<p>Lệnh lặp while trong javascript dùng để thực hiện lặp đi lặp lại đoạn code khi điềukiện là còn đúng, lệnh while sẽ dừng khi điềukiện là sai. Điềukiện được kiểm tra trước khi đoạn code được thực hiện.</p>
+
+<p>
+    while (điềukiện ) {
+        //Code thực hiện lặp lại khi điềukiện là đúng
+    }
+    Ví dụ lệnh lặp while trong javascript:
+</p>
+
+
+<div>
+    var n = 1;
+    while ( n = 31) {
+        document.write(n + " ");
+        n++; //thay đổi giá trị của n để đến 1 lúc điều kiện sẽ sai
+    }
+</div>
+
+<p>Chú ý: phải tính toán để điều kiện sẽ đến lúc sai, nếu không sẽ bị lỗi lặp vô hạn.</p>
+
+<p>Ví dụ khác</p>
+
+
+<div>
+    var n = 1;
+    while ( n <= 31) {
+        document.write("<option>Ngày " + n + "</option>");
+        n++;
+    }
+</div>
+
+<strong>
+    <div>Lệnh lặp do … while</div>
+</strong>
+<p>Lệnh lặp do while trong javascript dùng để diễn tả quá trình lặp đoạn code trong khi điềukiện là còn đúng, do while sẽ dừng khi điềukiện là sai.</p>
+<p>Code thực thi trước rồi mới kiểm tra điềukiện, nếu điềukiện đúng sẽ vòng lên và lặp tiếp, nếu điềukiện là sai thì không lặp nữa.</p>
+
+<p>
+    do {
+       mã lệnh thực hiện lặp lại
+    } while ( điềukiện )
+</p>
+<p>Ví dụ lệnh lặp do while trong javascript:</p>
+
+<div>
+    var t = 1;
+    do {
+        document.write( t + "<br>");
+        t++;
+    }
+    while (t <= 12);
+</div>
+<p>Chú ý: phải tính toán để điều kiện sẽ đến lúc sai, nếu không sẽ bị lỗi lặp vô hạn.</p>
+
+<strong>
+    <div>Lệnh lặp for trong javascript</div>
+</strong>
+<p>Một trong những cấu trúc điều khiển trong javascript thường hay dùng là lệnh lặp for. Lệnh này dùng để lặp một đoạn code với số lần lặp xác định. Cú pháp lệnh lặp for như sau:</p>
+
+<p>
+    for (khởitạo ; điềukiện ; bướctăng) {
+        //thực hiện
+    }
+</p>
+<p>Ví dụ lệnh lặp for trong javascript:</p>
+
+
+<div>
+    for (let t = 0; t <= 12; t++) {
+       document.write('Tháng ' + t );
+    }
+    
+    Lệnh for có thể dùng để duyệt qua một mảng:
+</div>
+
+
+    <div>
+        document.write( "<h4>CÁC ĐỨC TÍNH CAO QUÝ CỦA CON NGƯỜI</h4>");
+        var qt = ["Nhân", "Lễ", "Nghĩa","Trí","Tín" ];
+        for (var i = 0; i < qt.length; i++) {
+            document.write( "<p>" + qt[i] + "</p>");
+        }
+        document.write("<hr>");
+    </div>
+</body>
+</html>
